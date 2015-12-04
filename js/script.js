@@ -4,9 +4,7 @@ function log (){
   console.log('loaded');
 }
 
-//1ebf42df6f7bbef1
-// https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=6a4bc8822cfb9f2255b933ab7891ef9e&tags=greece&format=json&nojsoncallback=1
-var app = angular.module('locationPics', ["ui.bootstrap", "ui.router"]);
+var app = angular.module('locationPics', ["ui.router"]);
 app.config(function ($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
