@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Location Pictures</title>
+  <base href="/">
+  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="vendor/angular/angular.min.js"></script>
+  <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="vendor/angular-local-storage/dist/angular-local-storage.min.js"></script>
+  <script src="vendor/angular-base64-upload/dist/angular-base64-upload.min.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/directives/modalDirective.js"></script>
+  <script src="app/directives/dropdownMenu.js"></script>
+  <script src="app/routes/routes.js"></script>
+  <script src="app/interceptors/requestAuthInterceptor.js"></script>
+  <script src="app/config/config.js"></script>
+  <script src="app/map/mapSvc.js"></script>
+  <script src="app/shared/storeSvc.js"></script>
+  <script src="app/pictures/flickrSvc.js"></script>
+  <script src="app/pictures/picBoardSvc.js"></script>
+  <script src="app/shared/authSvc.js"></script>
+  <script src="app/profile/profileSvc.js"></script>
+  <script src="app/navbar/navCtrl.js"></script>
+  <script src="app/map/mapCtrl.js"></script>
+  <script src="app/favs/favCtrl.js"></script>
+  <script src="app/login/loginCtrl.js"></script>
+  <script src="app/register/registerCtrl.js"></script>
+  <script src="app/profile/profileCtrl.js"></script>
+  <script src="app/pictures/picCtrl.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsmtRxomVJnezAlofMm7gCzb-cyYJRUTc&libraries=places&callback=log" async defer></script>
+</head>
+<body ng-app = "locationPics">
+  <div id="navWrapper" ng-controller="navCtrl">
+    <nav class="navbar navbar-fixed-top navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" ui-sref="home">
+            Google Maps + Flickr
+          </a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav mid">
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a ui-sref="map">Map</a></li>
+            <li ng-hide="logged_in"><a ui-sref="login">Login</a></li>
+            <li ng-hide="logged_in"><a ui-sref="register">Register</a></li>
+            <dropdown ng-show="logged_in" title="Account" show="showMenu">
+                <li><a ui-sref="profile" ng-click="toggleMenu()">Profile</a></li>
+                <li class="divider"></li>
+                <li><a ui-sref="fav" ng-click="toggleMenu()">Favorites</a></li>
+            </dropdown>
+            <li><a ng-show="logged_in" href="#" ng-click="logout()">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="row main">
+    <div ui-view id="view"></div> 
+  </div>
+
+</body>
+</html>

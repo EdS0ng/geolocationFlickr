@@ -1,0 +1,99 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #93c4cc;
+}
+#map {
+  height: 400px;
+}
+.main{
+  margin-top: 15vh;
+}
+.nav li a{
+  font-size: 3vh;
+}
+#menu-toggle{
+  padding-top: 12%;
+  font-size: 1.5vw;
+}
+.imgs{
+  display: inline-block;
+  margin:1vw;
+  position: relative;
+}
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+.pac-container {
+  font-family: Roboto;
+}
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+.fav{
+  position: absolute;
+  top:0;
+  right: 0;
+  visibility: hidden;
+  font-weight: bold;
+  font-size: 2vw; 
+  opacity: 0;
+  -webkit-transition: visibility opacity 0.2s;
+  z-index: 10;
+}
+.fav:hover{
+  color: orange;
+  cursor: pointer;
+}
+.imgs:hover .fav{
+  visibility: visible;
+  opacity: 1;
+}
+.imgs:hover .img{
+  opacity: 0.5;
+  -webkit-transition: opacity 0.2s;
+}
+.avatar {
+  border-radius: 38px;
+  width: 100%;
+  height: 50vh;
+}
+.profileKey {
+  font-weight: 600;
+  padding-top:1vw;
+}
+.title{
+  text-align: center;
+  margin-top: 10px;
+}
+.modalPosition{
+  position: fixed;
+  top: 15%;
+  left: 30%;
+}
+.uploadFile{
+  padding: 1vw;
+}
+.dropdown-menu{
+  display: block;
+  background-color: #efefef;
+}

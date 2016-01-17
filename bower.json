@@ -1,24 +1,26 @@
 {
-  "name": "location-pics",
+  "name": "geoPictures",
   "description": "",
   "main": "index.js",
   "authors": [
     "eds0ng <edwardsong165@gmail.com>"
   ],
   "license": "ISC",
+  "homepage": "https://github.com/EdS0ng/geolocationFlickr",
   "moduleType": [],
-  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "Client/vendor",
     "test",
     "tests"
   ],
   "dependencies": {
     "angular": "~1.4.8",
-    "angular-bootstrap": "~0.14.3",
+    "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.6",
-    "angular-ui-router": "ui-router#~0.2.15"
+    "angular-local-storage": "~0.2.3",
+    "angular-base64-upload": "~0.1.14"
   }
 }

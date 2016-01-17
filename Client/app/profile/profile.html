@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1 well">
+      <div class="row">
+        <h1 class="title">Your Profile</h1>
+        <div class="col-sm-8">
+          <div class="row userInfo">
+            <div class="col-sm-12">
+              <div class="profileKey row">
+                <p class=" col-sm-2">Name :</p>
+                <p class="col-sm-10">{{user.profilename}}</p>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="profileKey row">
+                <p class=" col-sm-2">Email :</p>
+                <p class="col-sm-10">{{user.email}}</p>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="profileKey row">
+                <p class=" col-sm-2">Address :</p>
+                <p class="col-sm-10">{{user.address}}</p>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="profileKey row">
+                <p class=" col-sm-2">Phone :</p>
+                <p class="col-sm-10">{{user.phone}}</p>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="profileKey row">
+                <p class=" col-sm-2">Bio :</p>
+                <p class="col-sm-10">{{user.about}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-offset-4">
+            <button id="edit" class="btn btn-primary"ng-click="toggleModal()">Edit</button>
+            <button id="delete" class="btn btn-danger"ng-click='delete()'>Delete</button>
+          </div>
+        </div>
+        <div class="cropavatar col-sm-4">
+          <img src="{{avatarSrc}}" class="avatar col-lg-3">
+          <form>
+            <input type='file' ng-model='images.upload' base-sixty-four-input class="uploadFile">
+            <button ng-click="uploadAvatar()" class="btn btn-success btn-block"><span>Upload Image</span></button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <modal show="modalShown">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" ng-click="toggleModal()">&times;</button>
+          <h4 class="modal-title">Edit Profile Info</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Name:</label>
+            <input type="text" ng-model="form.profilename" placeholder="{{user.profilename}}" class="form-control">
+            <label>Email:</label>
+            <input type="text" ng-model="form.email" placeholder="{{user.email}}" class="form-control">
+            <label>Address:</label>
+            <input type="text" ng-model="form.address" placeholder="{{user.address}}" class="form-control">
+            <label>Phone:</label>
+            <input type="text" ng-model="form.phone" placeholder="{{user.phone}}" class="form-control">
+            <label>Bio:</label>
+            <input type="text" ng-model="form.about" placeholder="{{user.about}}" class="form-control">
+            <button class="btn btn-success"ng-click="save(form)">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </modal>
+</div>

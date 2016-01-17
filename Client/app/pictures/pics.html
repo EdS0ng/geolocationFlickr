@@ -1,0 +1,8 @@
+<div class="col-sm-10 col-sm-offset-1 well">
+  <h1 ng-hide="done">Loading...</h1>
+  <h1 ng-show="done">Picture Board</h1>
+  <div class="imgs"ng-repeat="link in links">
+    <span ng-click="favorite(link)" ng-class="{'glyphicon-star-empty': favs.indexOf(link) === -1, 'glyphicon-star': favs.indexOf(link) !==-1}" class="glyphicon fav"></span>
+    <img class="img" ng-src="{{::link}}">
+  </div>
+</div>
