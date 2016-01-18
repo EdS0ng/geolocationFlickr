@@ -10,4 +10,4 @@ See public pictures on Flickr based on a location chosen on the map. See picture
 - Add locations to wishlist
 - Keep track of credit card points for award travel
 
-Link: 
+Link: https://afternoon-lake-1612.herokuapp.com/
